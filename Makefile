@@ -2,7 +2,7 @@ CC = cc
 
 # CFLAGS = -Wall -Wextra -Werror
 
-SRC = fractol.c main.c utils.c errors.c
+SRC = fractol.c main.c utils.c errors.c events.c
 
 OBJ = $(SRC:.c=.o)
 

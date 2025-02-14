@@ -6,7 +6,7 @@
 /*   By: mel-mora <mel-mora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 17:26:40 by mel-mora          #+#    #+#             */
-/*   Updated: 2025/02/14 16:02:13 by mel-mora         ###   ########.fr       */
+/*   Updated: 2025/02/14 19:12:16 by mel-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@
 
 # define WIDTH 800
 # define HEIGHT 800
+# define KEYPRESS 2
+# define BUTTONPRESS 3
+# define DESTROYNOTIFY 17
 /*
  * COLORS
 */
@@ -41,11 +44,6 @@
 #define LAVA_RED        0xFF3300  // A bright, molten red
 
 typedef unsigned char byte;
-typedef struct s_data
-{
-    void    *mlx;
-    void    *win;
-}   t_data;
 
 typedef struct s_img
 {
@@ -65,6 +63,8 @@ typedef struct s_fractol
     t_img   img;
     double  escape_value;
     int     iterations;
+    double  shift_x;
+    double  shift_y;
 }  t_fractol;
 
 //complex number
@@ -84,6 +84,9 @@ t_complex   square_complex(t_complex a);
 void	my_mlx_pixel_put(t_img *data, int x, int y, int color);
 void	hundle_pixel(int x, int y, t_fractol *fractol);
 void	fractol_render(t_fractol *fractol);
+int	key_handler(int keysym, t_fractol *fractol);
+int	mouse_handler(int button, int x, int y, t_fractol *fractol);
+int    close_handler(t_fractol *fractol);
 
 
 #endif
