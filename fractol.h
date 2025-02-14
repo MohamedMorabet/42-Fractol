@@ -6,7 +6,7 @@
 /*   By: mel-mora <mel-mora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 17:26:40 by mel-mora          #+#    #+#             */
-/*   Updated: 2025/02/14 19:12:16 by mel-mora         ###   ########.fr       */
+/*   Updated: 2025/02/14 22:32:10 by mel-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # define WIDTH 800
 # define HEIGHT 800
 # define KEYPRESS 2
-# define BUTTONPRESS 3
+# define BUTTONPRESS 4
 # define DESTROYNOTIFY 17
 /*
  * COLORS
@@ -65,6 +65,7 @@ typedef struct s_fractol
     int     iterations;
     double  shift_x;
     double  shift_y;
+    double  zoom;
 }  t_fractol;
 
 //complex number

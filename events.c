@@ -6,7 +6,7 @@
 /*   By: mel-mora <mel-mora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:26:30 by mel-mora          #+#    #+#             */
-/*   Updated: 2025/02/14 22:00:30 by mel-mora         ###   ########.fr       */
+/*   Updated: 2025/02/14 22:23:58 by mel-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,12 @@ int	key_handler(int key, t_fractol *fractol)
 
 int	mouse_handler(int button, int x, int y, t_fractol *fractol)
 {
-    if (button == 4)
-    {
-        fractol->shift_x += 0.2;
-        fractol->shift_y += 0.2;
-    }
-    else if (button == 5)
-    {
-        fractol->shift_x -= 0.2;
-        fractol->shift_y -= 0.2;
-    }
+    if (button == 4) //scroll up
+        fractol->zoom *= 0.95;
+    else if (button == 5) //scroll down
+        fractol->zoom *= 1.05;
     // refresh the image
+    printf("Mouse button: %d\n", button);
     fractol_render(fractol);
     return (0);
 }

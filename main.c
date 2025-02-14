@@ -6,7 +6,7 @@
 /*   By: mel-mora <mel-mora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 09:42:42 by mel-mora          #+#    #+#             */
-/*   Updated: 2025/02/14 21:58:58 by mel-mora         ###   ########.fr       */
+/*   Updated: 2025/02/14 22:32:16 by mel-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@ void	data_init(t_fractol *fractol)
 	fractol->iterations = 42;
 	fractol->shift_x = 0.0;
 	fractol->shift_y = 0.0;
+	fractol->zoom = 1.0;
 }
 
 void	events_init(t_fractol *fractol)
 {
 	mlx_hook(fractol->mlx_window, KEYPRESS, 0, key_handler, fractol);
-	// mlx_hook(fractol->mlx_window, BUTTONPRESS, 0, mouse_handler, fractol);
-	// mlx_hook(fractol->mlx_window, DESTROYNOTIFY, 0, close_handler, fractol);
+	mlx_hook(fractol->mlx_window, BUTTONPRESS, 0, mouse_handler, fractol);
+	mlx_hook(fractol->mlx_window, DESTROYNOTIFY, 0, close_handler, fractol);
 }
 
 //fractol_init.c
@@ -60,8 +61,8 @@ void	hundle_pixel(int x, int y, t_fractol *fractol)
 	i = 0;
 	z.a = 0.0;
 	z.i = 0.0;
-	c.a = map(x, -2, 2, 0, WIDTH) + fractol->shift_x;
-	c.i = map(y, 2, -2, 0, HEIGHT) + fractol->shift_y;
+	c.a = (map(x, -2, 2, 0, WIDTH) * fractol->zoom) + fractol->shift_x;
+	c.i = (map(y, 2, -2, 0, HEIGHT) * fractol->zoom) + fractol->shift_y;
 	while (i < fractol->iterations)
 	{
 		z = sum_complex(square_complex(z), c);
@@ -106,7 +107,7 @@ int main(int ac, char **av)
 	t_fractol fractol;
 
 	// check for leaks
-	atexit(leaks);
+	// atexit(leaks);
     if ((ac == 2 && ft_strcmp(av[1], "mandelbort") == 0)
      || (ac == 4 && ft_strcmp(av[1], "julia") == 0))
     {
