@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   errors_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-mora <mel-mora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 10:20:49 by mel-mora          #+#    #+#             */
-/*   Updated: 2025/02/16 21:32:41 by mel-mora         ###   ########.fr       */
+/*   Updated: 2025/02/16 10:05:30 by mel-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "fractol.h"
+#include "fractol_bonus.h"
 #include <time.h>
 
 // Function to get a random message from an array
@@ -19,19 +18,19 @@ const char *get_random_message(const char *messages[], int size)
 {
 	return messages[rand() % size];
 }
-void display_usage(void)
+void	display_usage(void)
 {
-    printf("\033[1;33m🚨 Invalid input! Here’s how to use Fract'ol:\033[0m\n");
-    printf("\033[1;34m-------------------------------------------\033[0m\n");
-    printf("\033[1;32mUsage:\033[0m ./fractol <fractal_name> [optional parameters]\n");
-    printf("\n\033[1;36mAvailable fractals:\033[0m\n");
-    printf(" - \033[1;35mmandelbrot\033[0m   → ./fractol mandelbrot\n");
-    printf(" - \033[1;35mjulia\033[0m        → ./fractol julia <x> <y>\n");
-    printf("\n\033[1;34mExamples:\033[0m\n");
-    printf(" ./fractol mandelbrot\n");
-    printf(" ./fractol julia -0.8 0.156\n");
-    printf("\n\033[1;31mExiting now... Try again! 👀\033[0m\n");
-    exit(1);
+	printf("\033[1;33m🚨 Invalid input! Here’s how to use Fract'ol:\033[0m\n");
+	printf("\033[1;34m-------------------------------------------\033[0m\n");
+	printf("\033[1;32mUsage:\033[0m ./fractol <fractal_name> [optional parameters]\n");
+	printf("\n\033[1;36mAvailable fractals:\033[0m\n");
+	printf(" - \033[1;35mmandelbrot\033[0m   → ./fractol mandelbrot\n");
+	printf(" - \033[1;35mjulia\033[0m		→ ./fractol julia <x> <y>\n");
+	printf("\n\033[1;34mExamples:\033[0m\n");
+	printf(" ./fractol mandelbrot\n");
+	printf(" ./fractol julia -0.8 0.156\n");
+	printf("\n\033[1;31mExiting now... Try again! 👀\033[0m\n");
+	exit(1);
 }
 
 void its_error(int ac, char **av)
