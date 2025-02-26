@@ -33,8 +33,8 @@ Run the program with different fractal types:
 
 ```bash
 ./fractol mandelbrot
-./fractol julia
-./fractol burningship
+./fractol julia x y
+./fractol burning_ship
 ```
 
 ## 🎮 Controls
@@ -49,17 +49,8 @@ Run the program with different fractal types:
 ## 📸 Screenshots
 _Add images of the fractals here to showcase their beauty._
 
-## 📝 Contribution
-Feel free to contribute by submitting issues or pull requests. To contribute:
-
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature-name`)
-3. Commit your changes (`git commit -m 'Add feature'`)
-4. Push to the branch (`git push origin feature-name`)
-5. Open a pull request
-
 ## 📜 License
-This project is licensed under the **MIT License**.
+This project is licensed under the **MORABET License!**.
 
 ---
 💻 **Happy coding!** If you like the project, consider giving it a ⭐ on GitHub!
