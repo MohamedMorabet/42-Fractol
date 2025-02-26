@@ -6,7 +6,7 @@
 /*   By: mel-mora <mel-mora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:26:30 by mel-mora          #+#    #+#             */
-/*   Updated: 2025/02/26 20:45:16 by mel-mora         ###   ########.fr       */
+/*   Updated: 2025/02/26 22:38:26 by mel-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ int	key_handler(int key, t_fractol *fractol)
 	return (0);
 }
 
-// zoom in the current position of the mouse
 int	mouse_handler(int button, int x, int y, t_fractol *fractol)
 {
+	(void)x;
+	(void)y;
 	if (button == 4)
 		fractol->zoom *= 1.05;
 	else if (button == 5)
