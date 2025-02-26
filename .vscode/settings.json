@@ -8,6 +8,8 @@
         "bitset": "c",
         "fstream": "c",
         "ios": "c",
-        "locale": "c"
+        "locale": "c",
+        "fractol_bonus.h": "c",
+        "fractol.h": "c"
     }
 }

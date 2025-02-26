@@ -6,7 +6,7 @@
 /*   By: mel-mora <mel-mora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 12:31:04 by mel-mora          #+#    #+#             */
-/*   Updated: 2025/02/15 13:27:49 by mel-mora         ###   ########.fr       */
+/*   Updated: 2025/02/26 19:00:58 by mel-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,4 @@ void	events_init(t_fractol *fractol)
 	mlx_hook(fractol->mlx_window, KEYPRESS, 0, key_handler, fractol);
 	mlx_hook(fractol->mlx_window, BUTTONPRESS, 0, mouse_handler, fractol);
 	mlx_hook(fractol->mlx_window, DESTROYNOTIFY, 0, close_handler, fractol);
-	mlx_hook(fractol->mlx_window, MONTIONNOTIFY, 0, mouse_track, fractol);
 }
