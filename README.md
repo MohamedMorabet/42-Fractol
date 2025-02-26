@@ -21,8 +21,8 @@ Clone the repository and compile the program:
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/fract-ol.git
-cd fract-ol
+git clone https://github.com/MohamedMorabet/42-Fractol
+cd 42-Fractol
 
 # Compile the project
 make
@@ -55,3 +55,4 @@ This project is licensed under the **MORABET License!**.
 ---
 💻 **Happy coding!** If you like the project, consider giving it a ⭐ on GitHub!
 
+[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](
