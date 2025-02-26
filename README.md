@@ -1,7 +1,13 @@
 # Fract-ol
 
 ![Fract-ol](https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Mandel_zoom_00_mandelbrot_set.jpg/800px-Mandel_zoom_00_mandelbrot_set.jpg)  
-*A stunning fractal visualization project in C using the MiniLibX library.*
+Fract-ol
+
+"Developers are the architects of the future, crafting reality from mere ideas." – Unknown
+
+A stunning fractal visualization project in C using the MiniLibX library.
+
+
 
 ## 🌌 Introduction
 Fract-ol is a fractal rendering project that explores the beauty of mathematical sets such as the Mandelbrot and Julia sets. Developed using **C** and **MiniLibX**, this project showcases interactive fractal visualizations with smooth zooming and color variations.
