@@ -6,7 +6,7 @@
 /*   By: mel-mora <mel-mora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 09:41:24 by mel-mora          #+#    #+#             */
-/*   Updated: 2025/02/16 09:27:23 by mel-mora         ###   ########.fr       */
+/*   Updated: 2025/02/26 22:11:33 by mel-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,12 @@ double	atodbl(char *str)
 			dec = dec * 10 + str[i++] - '0';
 	}
 	return (sign * (res + dec / pow(10, len_num(dec))));
+}
+
+void	my_mlx_pixel_put(t_img *data, int x, int y, int color)
+{
+	int	offset;
+
+	offset = (y * data->size_line) + (x * (data->bits_per_pixel / 8));
+	*(unsigned int *)(data->pixels + offset) = color;
 }

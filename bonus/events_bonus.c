@@ -6,7 +6,7 @@
 /*   By: mel-mora <mel-mora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:26:30 by mel-mora          #+#    #+#             */
-/*   Updated: 2025/02/16 09:29:05 by mel-mora         ###   ########.fr       */
+/*   Updated: 2025/02/26 22:11:43 by mel-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,59 +14,49 @@
 
 int	key_handler(int key, t_fractol *fractol)
 {
-	if (key == 53)
+	if (key == ESC_KEY)
 		close_handler(fractol);
-	else if (key == 123) //left arrow
+	else if (key == LEFTARROW)
 		fractol->shift_x -= 0.2;
-	else if (key == 124) //right arrow
+	else if (key == RIGHTARROW)
 		fractol->shift_x += 0.2;
-	else if (key == 126) //up arrow
+	else if (key == UPARROW)
 		fractol->shift_y += 0.2;
-	else if (key == 125) //down arrow
+	else if (key == DOWNARROW)
 		fractol->shift_y -= 0.2;
-	else if (key == 69) //plus
+	else if (key == PLUS_KEY)
 		fractol->iterations += 1;
-	else if (key == 78) //minus
+	else if (key == MINUS_KEY)
 		fractol->iterations -= 1;
-	// refresh the image
 	fractol_render(fractol);
 	return (0);
 }
 
-// zoom in the current position of the mouse
 int	mouse_handler(int button, int x, int y, t_fractol *fractol)
 {
+	double	cursor_re;
+	double	cursor_im;
+
+	cursor_re = map(x, -2, 2, WIDTH - 1) / fractol->zoom + fractol->shift_x;
+	cursor_im = map(y, 2, -2, HEIGHT - 1) / fractol->zoom + fractol->shift_y;
 	if (button == 4)
 	{
-		fractol->zoom *= 0.80;
-		fractol->shift_x += (map(x, -2, 2, WIDTH) * 0.05);
-		fractol->shift_y += (map(y, 2, -2, HEIGHT) * 0.05);
+		fractol->zoom *= 1.05;
+		fractol->shift_x += (cursor_re - fractol->shift_x) * 0.05;
+		fractol->shift_y += (cursor_im - fractol->shift_y) * 0.05;
 	}
 	else if (button == 5)
 	{
-		fractol->zoom *= 1.15;
-		fractol->shift_x -= (map(x, -2, 2, WIDTH) * 0.05);
-		fractol->shift_y -= (map(y, 2, -2, HEIGHT) * 0.05);
+		fractol->zoom /= 1.05;
+		fractol->shift_x -= (cursor_re - fractol->shift_x) * 0.05;
+		fractol->shift_y -= (cursor_im - fractol->shift_y) * 0.05;
 	}
 	fractol_render(fractol);
-	return (0);
-}
-
-int	mouse_track(int x, int y, t_fractol *fractol)
-{
-	if (ft_strcmp(fractol->name, "julia") == 0)
-	{
-		fractol->julia_x = map(x, -2, 2, WIDTH);
-		fractol->julia_y = map(y, 2, -2, HEIGHT);
-		// refresh the image
-		fractol_render(fractol);
-	}
 	return (0);
 }
 
 int	close_handler(t_fractol *fractol)
 {
-	mlx_destroy_image(fractol->mlx_connection, fractol->img.img);
 	mlx_destroy_window(fractol->mlx_connection, fractol->mlx_window);
 	free(fractol->mlx_connection);
 	printf("\033[1;31m.\n..\n...\n👀 Whoa! \nEscaping? Fine... "
