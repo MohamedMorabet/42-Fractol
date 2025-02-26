@@ -47,7 +47,7 @@ Run the program with different fractal types:
 | `Esc` | Exit the program |
 
 ## 📸 Screenshots
-_Add images of the fractals here to showcase their beauty._
+NO SCREENS, JUST IMAGINE THE BEAUTY OF FRACTALS!
 
 ## 📜 License
 This project is licensed under the **MORABET License!**.
