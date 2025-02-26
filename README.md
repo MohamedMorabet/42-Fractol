@@ -1,6 +1,6 @@
 # Fract-ol
 
-![Fract-ol](https://your-image-link-here.png)  
+![Fract-ol](https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Mandel_zoom_00_mandelbrot_set.jpg/800px-Mandel_zoom_00_mandelbrot_set.jpg)  
 *A stunning fractal visualization project in C using the MiniLibX library.*
 
 ## 🌌 Introduction
