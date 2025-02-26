@@ -43,7 +43,7 @@ Run the program with different fractal types:
 | `Arrow Keys` | Move the view |
 | `Scroll Up` | Zoom in |
 | `Scroll Down` | Zoom out |
-| `1`, `2`, `3` | Switch color schemes |
+| `1`, `2`, `3` | Switch color schemes hhhh mnytk|
 | `Esc` | Exit the program |
 
 ## 📸 Screenshots
@@ -54,5 +54,3 @@ This project is licensed under the **MORABET License!**.
 
 ---
 💻 **Happy coding!** If you like the project, consider giving it a ⭐ on GitHub!
-
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](
