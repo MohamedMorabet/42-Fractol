@@ -6,7 +6,7 @@
 /*   By: mel-mora <mel-mora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 18:26:30 by mel-mora          #+#    #+#             */
-/*   Updated: 2025/02/26 22:11:43 by mel-mora         ###   ########.fr       */
+/*   Updated: 2025/03/02 12:38:10 by mel-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	close_handler(t_fractol *fractol)
 {
 	mlx_destroy_window(fractol->mlx_connection, fractol->mlx_window);
 	free(fractol->mlx_connection);
-	printf("\033[1;31m.\n..\n...\n👀 Whoa! \nEscaping? Fine... "
+	ft_printf("\033[1;31m.\n..\n...\n👀 Whoa! \nEscaping? Fine... "
 		"shutting down Fract'ol.\n\nSee you in another dimension! 🌌🔮\033[0m\n");
 	exit(0);
 }

@@ -6,7 +6,7 @@
 /*   By: mel-mora <mel-mora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 09:42:42 by mel-mora          #+#    #+#             */
-/*   Updated: 2025/02/26 22:16:24 by mel-mora         ###   ########.fr       */
+/*   Updated: 2025/03/02 12:17:04 by mel-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ int	main(int ac, char **av)
 			fractol.julia_y = atodbl(av[3]);
 		}
 		fractol_init(&fractol);
-		printf("\033[1;32m🚀 Fract'ol is starting... Let's create"
+		ft_printf("\033[1;32m🚀 Fract'ol is starting... Let's create"
 			" some fractal magic! ✨\033[0m\n");
 		fractol_render(&fractol);
-		printf("\033[1;34m🎨 Fract'ol is rendering... Sit back and"
+		ft_printf("\033[1;34m🎨 Fract'ol is rendering... Sit back and"
 			" enjoy the beauty! 🌌\033[0m\n");
 		mlx_loop(fractol.mlx_connection);
 	}

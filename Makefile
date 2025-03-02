@@ -2,9 +2,28 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = fractol.c main.c utils.c errors.c events.c fractol_utils.c calculations.c
+SRC = fractol.c \
+		main.c \
+		utils.c \
+		errors.c \
+		events.c \
+		fractol_utils.c \
+		calculations.c \
+		printf/ft_printf.c \
+		printf/num_functions.c \
+		printf/str_functions.c 
 
-SRC_BONUS = bonus/fractol_bonus.c bonus/main.c bonus/utils_bonus.c bonus/errors_bonus.c bonus/events_bonus.c bonus/fractol_utils_bonus.c bonus/calculations_bonus.c bonus/burning_ship_bonus.c
+SRC_BONUS = bonus/fractol_bonus.c \
+		bonus/main.c \
+		bonus/utils_bonus.c \
+		bonus/errors_bonus.c \
+		bonus/events_bonus.c \
+		bonus/fractol_utils_bonus.c \
+		bonus/calculations_bonus.c \
+		bonus/burning_ship_bonus.c \
+		printf/ft_printf.c \
+		printf/num_functions.c \
+		printf/str_functions.c 
 
 OBJ = $(SRC:.c=.o)
 
