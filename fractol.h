@@ -6,7 +6,7 @@
 /*   By: mel-mora <mel-mora@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 17:26:40 by mel-mora          #+#    #+#             */
-/*   Updated: 2025/02/26 20:45:32 by mel-mora         ###   ########.fr       */
+/*   Updated: 2025/03/02 12:31:15 by mel-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <math.h>
-# include <stdio.h>
+# include "printf/ft_printf.h"
 
 // Constants
 # define WIDTH 800
@@ -71,8 +71,8 @@ typedef struct s_complex
 
 /*-------------------- Utility and String Functions --------------------*/
 int			ft_strcmp(char *s1, char *s2);
-void		ft_putstr_fd(char *s, int fd);
 double		atodbl(char *str);
+int			ft_printf(const char *format, ...);
 
 /*-------------------- Error Handling Functions --------------------*/
 void		its_error(int ac, char **av);
